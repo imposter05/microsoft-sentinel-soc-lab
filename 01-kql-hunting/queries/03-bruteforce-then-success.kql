@@ -1,0 +1,12 @@
+// Brute force followed by success (the key hunt).
+// Groups events into 1-hour windows and surfaces any account with several
+// failed logons AND a success in the same window -- a brute-force attempt
+// that may have succeeded. This logic is promoted into the analytics rule.
+SecurityEvent
+| where EventID in (4624, 4625)
+| summarize
+    Failures  = countif(EventID == 4625),
+    Successes = countif(EventID == 4624)
+    by TargetAccount, Computer, bin(TimeGenerated, 1h)
+| where Failures >= 5 and Successes >= 1
+| order by TimeGenerated desc

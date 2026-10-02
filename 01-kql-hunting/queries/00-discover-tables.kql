@@ -1,0 +1,5 @@
+// Discover which tables are receiving data and how recently.
+// First thing to run when starting a hunt in an unfamiliar workspace.
+union withsource = TableName *
+| summarize Records = count(), LastRecord = max(TimeGenerated) by TableName
+| order by LastRecord desc

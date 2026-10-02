@@ -1,0 +1,6 @@
+// Failed logons grouped by account and host.
+// A single account with a spike of 4625s is a classic brute-force indicator.
+SecurityEvent
+| where EventID == 4625
+| summarize FailedAttempts = count() by TargetAccount, Computer
+| order by FailedAttempts desc

@@ -1,7 +1,0 @@
-// Name: Discover available tables
-// Purpose: Identify populated tables in the Microsoft demo workspace.
-
-search *
-| where TimeGenerated > ago(30d)
-| summarize RecordCount = count() by $table
-| order by RecordCount desc

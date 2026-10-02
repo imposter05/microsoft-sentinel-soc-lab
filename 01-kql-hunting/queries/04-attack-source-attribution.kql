@@ -1,0 +1,11 @@
+// Attack source attribution -- the key hunt.
+// Separates a remote (network) brute-force from local console attempts against
+// the same account, using LogonType and LogonProcessName:
+//   LogonType 3 + NtLmSsp  = network logon over SMB/NTLM (remote attacker)
+//   LogonType 2 + seclogo  = interactive logon at the machine itself (local)
+// In this lab the remote attack shows IpAddress 192.168.0.121 (the Kali host).
+SecurityEvent
+| where EventID == 4625
+| where TargetAccount contains "FakeAdmin"
+| project TimeGenerated, TargetAccount, IpAddress, WorkstationName, LogonType, LogonProcessName
+| order by TimeGenerated desc
