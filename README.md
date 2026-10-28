@@ -52,13 +52,13 @@ flowchart LR
 |---|---|---|
 | 00 | [Environment](./00-environment) | Onboarding a physical endpoint to Sentinel via Azure Arc + AMA + a Data Collection Rule |
 | 01 | [KQL Hunting & Attack Emulation](./01-kql-hunting) | Full attack chain (nmap → NetExec) + KQL to hunt and attribute it |
-| 02 | [Detection Engineering & Analytics Rules](./02-analytics-rules) | Scheduled rules with hypotheses, thresholds, and false-positive tuning |
-| 03 | [Watchlists](./03-watchlists) | Enriching detections with known-bad IPs and high-value accounts |
-| 04 | [Workbooks](./04-workbooks) | A visual SOC dashboard over endpoint telemetry |
-| 05 | [Threat Intelligence](./05-threat-intelligence) | Matching endpoint logs against threat-intel indicators |
-| 06 | [Incident Investigation](./06-incident-investigation) | Full analyst investigation of a pass-the-hash / lateral-movement scenario |
-| 07 | [SOAR Automation](./07-automation-playbooks) | Automation rule + playbook that auto-triage and enrich incidents |
-| 08 | [MITRE ATT&CK Mapping](./08-mitre-mapping) | Detection-to-technique coverage and gap analysis |
+| 02 | [SOAR Automation](./07-automation-playbooks) | Automation rule + playbook that auto-triage and enrich incidents |
+| 03 | [Watchlists](./03-watchlists) | in progress- Enriching detections with known-bad IPs and high-value accounts |
+| 04 | [Workbooks](./04-workbooks) | in progress- A visual SOC dashboard over endpoint telemetry |
+| 05 | [Threat Intelligence](./05-threat-intelligence) | in progress- Matching endpoint logs against threat-intel indicators |
+| 06 | [Incident Investigation](./06-incident-investigation) | Planned-  Full analyst investigation of a pass-the-hash / lateral-movement scenario |
+| 07 | [Detection Engineering & Analytics Rules](./02-analytics-rules) | Planned- Scheduled rules with hypotheses, thresholds, and false-positive tuning |
+| 08 | [MITRE ATT&CK Mapping](./08-mitre-mapping) | Planned- Detection-to-technique coverage and gap analysis |
 
 ---
 
